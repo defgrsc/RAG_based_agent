@@ -1,0 +1,192 @@
+version: 1
+scenarios:
+  - scenario_id: colloquial_dorm_application_to_failure
+    category: colloquial_unseen
+    description: 先辦宿網，下一輪省略服務名並用台灣口語表示辦完後仍無法上網。
+    expected_outcome: 從前文繼承 dorm_network，但明確切成 troubleshooting，申請內容不得進入新 query。
+    personas:
+      - 句子很短、會使用「啊、欸、結果、還是」且第二輪省略服務名稱的住宿生。
+      - 不熟技術詞，只會說網路「掛了、跑不動、上不了網」的學生。
+    semantic_criteria:
+      - 第二輪主要提供宿網故障排除，不得重複申請流程。
+    tags: [colloquial, omitted_topic, intent_switch, dorm_network]
+    turns:
+      - generation:
+          goal: 用口語詢問宿網要去哪裡辦。
+          examples: [欸宿網到底要去哪辦啦？, 住宿舍那個網路要去哪申請啊？]
+          must_include_any: [宿網, 宿舍]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          allowed_retrieval_topics: [dorm_network]
+      - generation:
+          goal: 不重複宿網名稱，表達已辦完但現在仍無法上網。
+          examples: [啊我都辦完了，結果現在上不了網欸。, 弄好了啦，可是還是不能用。]
+          must_include_any: [上不了網, 不能用, 掛了, 跑不動]
+          must_not_include: [宿網, 宿舍網路]
+        expected:
+          topic: dorm_network
+          intent: troubleshooting
+          relation: intent_switch
+          reference_status: none
+          referenced_turn_ids: []
+          relevant_history_excludes: [1]
+          allowed_retrieval_topics: [dorm_network]
+
+  - scenario_id: colloquial_named_return_with_room_change
+    category: colloquial_unseen
+    description: 在宿網與 GAPP 間跳題後，用「宿網那題」而非序數回頭並補充換房間。
+    expected_outcome: 找回第一輪宿網 application，將換房間轉成 dorm_transfer 與重新申請問題。
+    personas:
+      - 說話會加「啦、咧、那題」並在不同校園服務之間快速跳題的住宿生。
+    semantic_criteria:
+      - 最終回答處理換房間後的宿網重新申請，而非連線故障。
+    tags: [colloquial, named_reference, room_change, application]
+    turns:
+      - generation:
+          goal: 詢問宿網申請。
+          examples: [宿網要去哪辦啊？, 宿舍網路要去哪申請？]
+          must_include_any: [宿網, 宿舍網路]
+          must_not_include: [那題, 前面, 剛才, 回到, 換房間, 換了房間, 搬房間, 換寢室, 換了寢室, 搬寢室, 重辦, 重新申請]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+      - generation:
+          goal: 明確改問 GAPP 帳號申請。
+          examples: [先問別的，GAPP 帳號怎麼開？, 那 Google Workspace 要去哪申請？]
+          must_include_any: [GAPP, Google Workspace]
+        expected:
+          topic: email
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          relevant_history_excludes: [1]
+      - generation:
+          goal: 口語回到宿網那題，說自己換房間並問是否要重辦。
+          examples: [先回宿網那題啦，我換房間後這個要重辦嗎？, 剛才宿網那個咧，換寢室是不是得再申請？, 宿網那題，我搬房間了要重新辦嗎？]
+          must_include_any: [宿網, 宿舍網路]
+          must_include_groups:
+            - [宿網, 宿舍網路]
+            - [換宿, 換房間, 換了房間, 搬房間, 換寢室, 換了寢室, 搬寢室]
+            - [重辦, 重新辦, 重新申請, 再申請]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: follow_up
+          reference_status: resolved
+          referenced_turn_ids: [1]
+          qualifiers: [dorm_transfer]
+          standalone_contains_any: [重新申請, 重辦, 再申請]
+          standalone_forbids: [連不上, 故障]
+          allowed_retrieval_topics: [dorm_network]
+
+  - scenario_id: colloquial_dismiss_old_service
+    category: colloquial_unseen
+    description: 先談宿網，接著用「先不管」否定舊服務並在同一句改問 GAPP。
+    expected_outcome: 後段 GAPP 必須決定 email topic，fast answer 與 retrieval 都不得落回宿網。
+    personas:
+      - 會在一句話中先否定舊題，再用「我是要問」切換服務的學生。
+    semantic_criteria:
+      - 第二輪只能回答 GAPP 或清大信箱申請。
+    tags: [colloquial, discourse_negation, topic_switch, fast_answer_guard]
+    turns:
+      - generation:
+          goal: 詢問宿網故障。
+          examples: [宿網連不上欸，怎麼弄？, 宿舍網路不能用。]
+          must_include_any: [宿網, 宿舍網路]
+          must_not_include: [GAPP, Google Workspace, Google Apps, gapp]
+        expected:
+          topic: dorm_network
+          intent: troubleshooting
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+      - generation:
+          goal: 在同一句先說宿網不用處理，再明確詢問 GAPP 帳號申請。
+          examples: [宿網先不管啦，我現在是要問 GAPP 帳號怎麼申請。, 前面宿網擺一邊，我想辦的是 GAPP。]
+          must_include_any: [GAPP, gapp]
+          must_include_all: [宿網]
+        expected:
+          topic: email
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          relevant_history_excludes: [1]
+          standalone_forbids: [宿網申請]
+          allowed_retrieval_topics: [email]
+
+  - scenario_id: colloquial_missing_previous_turn
+    category: colloquial_unseen
+    description: 第一則訊息就說「前面那個」，帶語助詞但完全沒有可引用歷史。
+    expected_outcome: 標記 unresolved 並請使用者重貼問題，不得用 scope guard 拒答。
+    personas:
+      - 誤以為聊天紀錄仍存在，會說「欸、咧、那個」但不提供服務名的學生。
+    semantic_criteria:
+      - 回答清楚表示找不到前題並要求補充。
+    tags: [colloquial, unresolved_reference, no_history]
+    turns:
+      - generation:
+          goal: 用很口語的方式追問不存在的前一題，不說任何服務名稱。
+          examples: [欸前面那個到底怎麼弄啦？, 剛剛那題咧，我還是不懂。, 那個可以再講一次嗎？]
+          must_include_any: [前面, 剛剛, 那個]
+          must_not_include: [宿網, Wi-Fi, VPN, GAPP, 信箱]
+        expected:
+          topic: unknown
+          intent: unknown
+          relation: new_topic
+          reference_status: unresolved
+          referenced_turn_ids: []
+          must_answer: false
+          must_clarify: true
+
+  - scenario_id: colloquial_vpn_install
+    category: colloquial_unseen
+    description: 用「怎麼裝」而不是正式的「安裝與設定」詢問 VPN。
+    expected_outcome: 辨識 vpn/configuration 並回答清大 VPN 安裝設定。
+    personas:
+      - 不熟軟體名稱，只會把 VPN client 稱作「那個 app」的學生。
+    semantic_criteria:
+      - 回答 VPN 安裝設定，不得誤判為故障或帳號申請。
+    tags: [colloquial, vpn, configuration]
+    turns:
+      - generation:
+          goal: 口語詢問清大 VPN 程式怎麼安裝。
+          examples: [清大 VPN 那個要怎麼裝啊？, VPN 的 app 是要去哪載啦？]
+          must_include_any: [VPN, vpn]
+        expected:
+          topic: vpn
+          intent: configuration
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          allowed_retrieval_topics: [vpn]
+
+  - scenario_id: colloquial_wifi_connected_but_unusable
+    category: colloquial_unseen
+    description: Wi-Fi 顯示已連線，但使用者以「網頁跑不動」描述故障。
+    expected_outcome: 辨識 campus_wifi/troubleshooting，不把「有連到」誤判成成功或一般使用。
+    personas:
+      - 只描述手機畫面與體感，不會提供認證、IP 等技術資訊的學生。
+    semantic_criteria:
+      - 回答校園 Wi-Fi 已連線但無法使用的排障步驟。
+    tags: [colloquial, campus_wifi, troubleshooting]
+    turns:
+      - generation:
+          goal: 說學校 Wi-Fi 看起來有連到，但網頁完全跑不動。
+          examples: [學校 wifi 明明有連到，網頁還是跑不動欸。, 校園 Wi-Fi 顯示已連線，可是什麼都開不了。]
+          must_include_any: [Wi-Fi, wifi]
+        expected:
+          topic: campus_wifi
+          intent: troubleshooting
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          allowed_retrieval_topics: [campus_wifi]

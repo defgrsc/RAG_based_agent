@@ -1,0 +1,5 @@
+{"type": "out_of_scope", "messages": [{"role": "user", "content": "清大附近有什麼好吃的？"}, {"role": "assistant", "content": "這個問題不屬於清大網路服務範圍。我可以協助校園 Wi-Fi、宿舍網路、VPN、DNS、Proxy、電子郵件與網路登入認證相關問題。"}]}
+{"type": "out_of_scope", "messages": [{"role": "user", "content": "我要怎麼選課？"}, {"role": "assistant", "content": "這個問題不屬於清大網路服務範圍。我可以協助的是清大校園網路、宿舍網路、VPN、無線網路、信箱與網路連線相關問題。"}]}
+{"type": "out_of_scope", "messages": [{"role": "user", "content": "明天天氣怎麼樣？"}, {"role": "assistant", "content": "這個問題不屬於清大網路服務範圍。我可以協助處理清大網路連線、校園 Wi-Fi、宿網、VPN 與電子郵件相關問題。"}]}
+{"type": "out_of_scope", "messages": [{"role": "user", "content": "宿舍抽籤什麼時候開始？"}, {"role": "assistant", "content": "這個問題不是清大網路服務問題。若你要問的是宿舍網路、宿網註冊、房間網孔或有線網路連線，我可以協助判斷。"}]}
+{"type": "out_of_scope", "messages": [{"role": "user", "content": "可以幫我寫作業嗎？"}, {"role": "assistant", "content": "這個問題不屬於清大網路服務範圍。我可以協助清大網路相關問題，例如 Wi-Fi 連線、宿舍網路、VPN、DNS、Proxy 或信箱設定。"}]}

@@ -1,0 +1,1150 @@
+{
+  "schema_version": 1,
+  "fetched_at": "2026-08-27",
+  "sources": [
+    {
+      "url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "title": "校園無線區域網路服務範圍（網路系統組）",
+      "role": "current_department_coverage"
+    },
+    {
+      "url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "title": "Campus Wireless LAN Account Service Scope",
+      "role": "detailed_public_area_coverage"
+    }
+  ],
+  "records": [
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-南大校區",
+      "location": "南大校區",
+      "scope_detail": "南大校區",
+      "ssids": [
+        "nthu-cc",
+        "TANetRoaming",
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "圖書館",
+      "location": "圖書館",
+      "scope_detail": "圖書館",
+      "ssids": [
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "物理系",
+      "location": "物理館",
+      "scope_detail": "物理館",
+      "ssids": [
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "統計所",
+      "location": "第三綜合大樓 8F",
+      "scope_detail": "第三綜合大樓 8F",
+      "ssids": [
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "數學系",
+      "location": "第三綜合大樓 B1-7F",
+      "scope_detail": "第三綜合大樓 B1-7F",
+      "ssids": [
+        "nthu-math",
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "化學系",
+      "location": "化學系1樓大廳",
+      "scope_detail": "化學系1樓大廳",
+      "ssids": [
+        "nthu-chem"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "動機系",
+      "location": "工程一館 1-6F",
+      "scope_detail": "工程一館 1-6F",
+      "ssids": [
+        "nthu-pme",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "工工系",
+      "location": "工程一館 1F,2F,7-9F",
+      "scope_detail": "工程一館 1F,2F,7-9F",
+      "ssids": [
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "化工系",
+      "location": "化工館 B1-3F",
+      "scope_detail": "化工館 B1-3F",
+      "ssids": [
+        "nthu-che",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "材料系",
+      "location": "材料科技館全區",
+      "scope_detail": "材料科技館全區",
+      "ssids": [
+        "nthu-mse",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "材料系",
+      "location": "台達館 B1F,4F",
+      "scope_detail": "台達館 B1F,4F",
+      "ssids": [
+        "nthu-mse",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "醫環系",
+      "location": "生醫工程及環境科學館",
+      "scope_detail": "生醫工程及環境科學館",
+      "ssids": [
+        "nthu-bmes"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "工科系",
+      "location": "工科館",
+      "scope_detail": "工科館",
+      "ssids": [
+        "nthu-ess",
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "核工所",
+      "location": "綠色低碳能源教學研究大樓(李存敏館)",
+      "scope_detail": "綠色低碳能源教學研究大樓(李存敏館)",
+      "ssids": [
+        "nthu-nes",
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "人社院",
+      "location": "人社館",
+      "scope_detail": "人社館",
+      "ssids": [
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "生科院",
+      "location": "生科二館 B1~2F",
+      "scope_detail": "生科二館 B1~2F",
+      "ssids": [
+        "NTHU-LIFE",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "生科院",
+      "location": "腦科學研究中心(清華實驗室5F)",
+      "scope_detail": "腦科學研究中心(清華實驗室5F)",
+      "ssids": [
+        "nthu-brc",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "電機系",
+      "location": "資訊電機館",
+      "scope_detail": "資訊電機館",
+      "ssids": [
+        "nthu-ee",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "電機系",
+      "location": "台達館 2F,5F,8-9F",
+      "scope_detail": "台達館 2F,5F,8-9F",
+      "ssids": [
+        "nthu-ee",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "資工系",
+      "location": "資訊電機館",
+      "scope_detail": "資訊電機館",
+      "ssids": [
+        "nthu-cs-*",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "資工系",
+      "location": "台達館 1F,5F-7F",
+      "scope_detail": "台達館 1F,5F-7F",
+      "ssids": [
+        "nthu-cs-*",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "資工系",
+      "location": "第二綜合大樓7F",
+      "scope_detail": "第二綜合大樓7F",
+      "ssids": [
+        "nthu-cs-*",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "科管院",
+      "location": "台積館（含館前區域）",
+      "scope_detail": "台積館（含館前區域）",
+      "ssids": [
+        "nthu-ctm",
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "清華學院",
+      "location": "教育館 2F~4F",
+      "scope_detail": "教育館 2F~4F",
+      "ssids": [
+        "nthu-thc",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "學習科學研究所",
+      "location": "第二綜合大樓B側4樓",
+      "scope_detail": "第二綜合大樓B側4樓",
+      "ssids": [
+        "nthu-ils",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "創新育成中心",
+      "location": "創新育成大樓",
+      "scope_detail": "創新育成大樓",
+      "ssids": [
+        "nthu-cii",
+        "nthupeap"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "國家理論科學研究中心",
+      "location": "第三綜合大樓4F",
+      "scope_detail": "第三綜合大樓4F",
+      "ssids": [
+        "nthu-nctsphys",
+        "nthupeap",
+        "eduroam"
+      ],
+      "authentication": "依該 SSID 使用網頁認證或 802.1x/PEAP",
+      "source_url": "https://net.nthu.edu.tw/netsys/wireless:uniform",
+      "source_priority": 1
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "小吃部",
+      "scope_detail": "小吃部",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "小吃部戶外用餐屋",
+      "scope_detail": "小吃部戶外用餐屋",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "水漾餐廳",
+      "scope_detail": "水漾餐廳",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜一館-行政大樓會議室",
+      "scope_detail": "綜一館-行政大樓會議室",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜一館-168教室",
+      "scope_detail": "綜一館-168教室",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "合勤演藝廳",
+      "scope_detail": "合勤演藝廳",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜二館-1F穿堂",
+      "scope_detail": "綜二館-1F穿堂",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜二館-電腦教室2F",
+      "scope_detail": "綜二館-電腦教室2F",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜二館-計通中心3F~6F",
+      "scope_detail": "綜二館-計通中心3F~6F",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜二館-8F國際會議廳",
+      "scope_detail": "綜二館-8F國際會議廳",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜二館B側-共同教室區1F,2F,6F",
+      "scope_detail": "綜二館B側-共同教室區1F,2F,6F",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "旺宏館國際會議廳",
+      "scope_detail": "旺宏館國際會議廳",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "旺宏館2F綜合教室",
+      "scope_detail": "旺宏館2F綜合教室",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "旺宏館3F遠距教室",
+      "scope_detail": "旺宏館3F遠距教室",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "旺宏館7F行政中樞",
+      "scope_detail": "旺宏館7F行政中樞",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "課指組",
+      "scope_detail": "課指組",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "清華書院",
+      "scope_detail": "清華書院",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "第二招待所",
+      "scope_detail": "第二招待所",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "風雲樓-餐廳2F-3F",
+      "scope_detail": "風雲樓-餐廳2F-3F",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "風雲樓-3F國際學生活動中心",
+      "scope_detail": "風雲樓-3F國際學生活動中心",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "水木生活中心1F餐廳",
+      "scope_detail": "水木生活中心1F餐廳",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "水木生活中心2F",
+      "scope_detail": "水木生活中心2F",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "體育館",
+      "scope_detail": "體育館",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "桌球館",
+      "scope_detail": "桌球館",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "室內網球場",
+      "scope_detail": "室內網球場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "游泳池",
+      "scope_detail": "游泳池",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "校友體育館",
+      "scope_detail": "校友體育館",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "名人堂",
+      "scope_detail": "名人堂",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "蒙民偉樓(學生活動中心)",
+      "scope_detail": "蒙民偉樓(學生活動中心)",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "醫輔大樓",
+      "scope_detail": "醫輔大樓",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜四館-共同教室區1F,2F",
+      "scope_detail": "綜四館-共同教室區1F,2F",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "竹師教育學院大樓",
+      "scope_detail": "竹師教育學院大樓",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "學生宿舍各齋公共區（如交誼廳、K書中心）",
+      "scope_detail": "學生宿舍各齋公共區（如交誼廳、K書中心）",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "大草坪",
+      "scope_detail": "大草坪",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜二館旁鴿子廣場",
+      "scope_detail": "綜二館旁鴿子廣場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "綜一館(行政大樓)戶外廣場",
+      "scope_detail": "綜一館(行政大樓)戶外廣場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "成功湖畔(近社團區域)",
+      "scope_detail": "成功湖畔(近社團區域)",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "學生活動中心戶外廣場",
+      "scope_detail": "學生活動中心戶外廣場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "小吃部戶外廣場",
+      "scope_detail": "小吃部戶外廣場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "合金實驗館戶外廣場",
+      "scope_detail": "合金實驗館戶外廣場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "桌球館戶外廣場",
+      "scope_detail": "桌球館戶外廣場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "溜冰場",
+      "scope_detail": "溜冰場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "室外網球場",
+      "scope_detail": "室外網球場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "棒球場",
+      "scope_detail": "棒球場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "籃球場",
+      "scope_detail": "籃球場",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "體育館戶外廣場(梅園入口處區域)",
+      "scope_detail": "體育館戶外廣場(梅園入口處區域)",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    },
+    {
+      "service": "campus_wifi",
+      "intent": "coverage",
+      "manager": "計算機與通訊中心-校本部",
+      "location": "田徑場(近司令台區域)",
+      "scope_detail": "田徑場(近司令台區域)",
+      "ssids": [
+        "eduroam",
+        "nthupeap",
+        "TANetRoaming",
+        "nthu-cc"
+      ],
+      "authentication": "802.1x/PEAP 或網頁認證",
+      "source_url": "https://www.wlan.nthu.edu.tw/~wlan/NM/MyUserZone_new.html",
+      "source_priority": 2
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "我的網路不能用"}, {"role": "assistant", "content": "我需要先確認是哪一種清大網路問題。請提供：你在校內還是校外、使用 Wi-Fi/宿舍有線網路/VPN、是否有用 Wi-Fi 分享器、裝置是手機或電腦、是否有錯誤訊息、其他網站是否能開。"}]}
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "連不上"}, {"role": "assistant", "content": "請補充連不上的是哪個服務：校園 Wi-Fi、宿舍網路、VPN、信箱，還是特定校內網站？也請提供裝置系統(如 Windows、macOS)、所在位置、錯誤訊息，以及是否其他同學也遇到相同情況。"}]}
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "登入失敗"}, {"role": "assistant", "content": "請問是哪個服務登入失敗：無線網路、eduroam、VPN、電子郵件或其他校內系統？請提供帳號格式是否照學校說明輸入、錯誤訊息文字、裝置系統與發生時間。"}]}
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "宿舍好像壞了"}, {"role": "assistant", "content": "請確認是宿舍網路問題還是宿舍其他設備問題。若是網路，請提供宿舍區域、房號或樓層、使用有線或無線、是否同寢室多人受影響、錯誤訊息與大約開始時間。"}]}
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "打不開網頁"}, {"role": "assistant", "content": "請先提供你目前的連線方式：校園 Wi-Fi、宿舍有線網路、VPN 或校外網路。也請說明是所有網頁都打不開，還是只有校內資源打不開，並附上截圖。"}]}
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "Wi-Fi 不能用"}, {"role": "assistant", "content": "我需要先確認是哪一種無線網路情況。請提供：你連的 SSID 是 `nthu-cc`、`TANetRoaming`、`nthupeap` 還是 `eduroam`；是在校內還是外校漫遊；裝置系統；是否有跳出登入頁；帳號格式；畫面錯誤訊息或截圖。"}]}
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "宿舍網路不能用"}, {"role": "assistant", "content": "我需要先確認宿網申請與設定狀態。請提供：是否已申請學生宿舍網路帳號、是否已完成宿網申請並取得 TCP/IP 設定、裝置是否直接接網路線或透過分享器、是否有手動設定 IPv4、是否做過交叉測試，以及畫面錯誤訊息或截圖。"}]}
+{"type": "clarifying_question", "messages": [{"role": "user", "content": "帳號不能用"}, {"role": "assistant", "content": "請先確認是哪一種帳號：校園無線區域網路帳號、宿網帳號、校務資訊系統帳號，或其他帳號。也請提供你要使用的服務、登入頁面網址、帳號格式、錯誤訊息，以及是否近期改過密碼。"}]}

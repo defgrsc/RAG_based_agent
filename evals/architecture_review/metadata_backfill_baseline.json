@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-08-29T06:54:38+08:00",
+  "collection": "nthu_netsys_docs__1787924232138133628",
+  "points": 217,
+  "required_schema_version": 2,
+  "completeness": {
+    "service": {"present": 74, "missing": 143, "rate": 0.3410},
+    "intent": {"present": 74, "missing": 143, "rate": 0.3410},
+    "language": {"present": 0, "missing": 217, "rate": 0.0},
+    "source_type": {"present": 74, "missing": 143, "rate": 0.3410},
+    "services": {"present": 0, "missing": 217, "rate": 0.0},
+    "tasks": {"present": 0, "missing": 217, "rate": 0.0},
+    "metadata_schema_version": {"present": 0, "missing": 217, "rate": 0.0}
+  },
+  "acceptance_gate": {
+    "all_required_fields_rate": 1.0,
+    "unknown_language_allowed": false,
+    "empty_services_allowed": false,
+    "empty_tasks_allowed": false,
+    "activate_only_after_local_document_validation": true
+  },
+  "scope": "Ingestion metadata and staging backfill only; retrieval hard filtering is intentionally deferred."
+}

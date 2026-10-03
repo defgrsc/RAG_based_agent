@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitle">清大網路客服 Widget Prototype</title>
+    <link rel="stylesheet" href="./styles.css?v=20260822-1" />
+  </head>
+  <body>
+    <main class="demo-page" aria-label="網站範例頁面" data-i18n-aria-label="demoPageLabel">
+      <section class="demo-hero">
+        <p class="demo-kicker">NTHU Network Systems</p>
+        <h1 data-i18n="heroTitle">國立清華大學網路系統組</h1>
+        <p data-i18n="heroDescription">
+          這是一個用來測試右下角 AI 客服 bubble 的暫時頁面。正式導入時，只需要把 widget
+          相關的 HTML、CSS、JavaScript 搬到目標網站即可。
+        </p>
+      </section>
+
+      <section class="demo-content" aria-label="範例內容" data-i18n-aria-label="demoContentLabel">
+        <article>
+          <h2 data-i18n="commonServices">常用服務</h2>
+          <p data-i18n="commonServicesDescription">校園無線網路、宿舍網路、VPN、電子郵件與資安相關服務。</p>
+        </article>
+        <article>
+          <h2 data-i18n="serviceNotice">服務提醒</h2>
+          <p data-i18n="serviceNoticeDescription">右下角的客服 bubble 可用來查詢清大網路服務資訊與相關來源。</p>
+        </article>
+      </section>
+    </main>
+
+    <div class="chat-widget" data-open="false">
+      <div class="chat-nudge" role="status" data-i18n="nudge">清大網路問題可以問我</div>
+
+      <section class="chat-panel" aria-label="清大網路客服對話框" data-i18n-aria-label="panelLabel" aria-hidden="true">
+        <header class="chat-header">
+          <div>
+            <p class="chat-eyebrow">AI Agent</p>
+            <h2 data-i18n="chatTitle">清大網路客服</h2>
+          </div>
+          <div class="chat-header-actions">
+            <button class="clear-chat-button language-button" type="button" data-action="language" aria-label="Switch to English">
+              <span data-language-label>EN</span>
+            </button>
+            <button class="clear-chat-button" type="button" data-action="clear" aria-label="清除聊天室" data-i18n="clear" data-i18n-aria-label="clearLabel">清除</button>
+            <button class="icon-button" type="button" data-action="close" aria-label="關閉對話框" data-i18n-aria-label="closeLabel">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="chat-body" data-chat-body>
+          <div class="welcome">
+            <p data-i18n="welcome">請問我清大無線網路、宿網、VPN、信箱等問題。</p>
+            <div class="prompt-grid" aria-label="建議問題" data-i18n-aria-label="promptsLabel">
+              <button type="button" data-prompt-key="promptWifi">校園無線網路怎麼使用？</button>
+              <button type="button" data-prompt-key="promptDormApply">宿舍網路怎麼申請？</button>
+              <button type="button" data-prompt-key="promptWifiPage">為什麼我進不去申請無線網路的網頁？</button>
+              <button type="button" data-prompt-key="promptDormIssue">為什麼我連不上宿網？</button>
+            </div>
+          </div>
+        </div>
+
+        <form class="chat-composer" data-chat-form>
+          <label class="sr-only" for="chat-input" data-i18n="inputLabel">輸入問題</label>
+          <textarea
+            id="chat-input"
+            name="message"
+            rows="1"
+            placeholder="輸入清大網路相關問題..." data-i18n-placeholder="inputPlaceholder"
+            autocomplete="off"
+            data-chat-input
+          ></textarea>
+          <button class="send-button" type="submit" aria-label="送出訊息" data-i18n-aria-label="sendLabel">
+            <span aria-hidden="true">➜</span>
+          </button>
+        </form>
+      </section>
+
+      <button class="chat-bubble" type="button" data-action="open" aria-label="開啟清大網路客服" data-i18n-aria-label="openLabel">
+        <span aria-hidden="true">?</span>
+      </button>
+    </div>
+
+    <script src="./app.js?v=20260823-1"></script>
+  </body>
+</html>

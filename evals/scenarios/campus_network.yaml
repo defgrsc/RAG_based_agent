@@ -1,0 +1,277 @@
+version: 1
+scenarios:
+  - scenario_id: topic_switch_dorm_to_wifi
+    category: topic_switching
+    description: 使用者先問宿網申請，下一輪明確切到校園 Wi-Fi 連線問題。
+    expected_outcome: 新 topic 必須覆蓋宿網歷史，回答校園無線網路而不是宿網。
+    personas:
+      - 使用繁體中文、句子短、會用口語「也」承接，但服務名稱說得清楚的清大學生。
+      - 不熟技術名詞、會把 Wi-Fi 寫成 wifi 的住宿生。
+    semantic_criteria:
+      - 第二輪不得把校園 Wi-Fi 當成宿舍網路。
+    tags: [topic_switch, dorm_network, campus_wifi]
+    turns:
+      - generation:
+          goal: 詢問如何申請宿舍網路。
+          examples: [宿網要怎麼申請？, 住宿舍的網路要去哪裡辦？]
+          must_include_any: [宿網, 宿舍網路]
+          style_notes: [不要提連線故障]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          standalone_contains_any: [申請, 辦]
+          allowed_retrieval_topics: [dorm_network]
+      - generation:
+          goal: 明確切換到校園 Wi-Fi，詢問 Wi-Fi 連不上；可自然使用「也」。
+          examples: [Wi-Fi 也連不上怎麼辦？, 換個問題，校園無線網路一直斷。]
+          must_include_any: [Wi-Fi, wifi, 無線網路]
+          style_notes: [必須是故障排除，不要只說「網路」]
+        expected:
+          topic: campus_wifi
+          intent: troubleshooting
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          relevant_history_excludes: [1]
+          standalone_forbids: [宿網, 宿舍網路]
+          allowed_retrieval_topics: [campus_wifi]
+
+  - scenario_id: dorm_application_topic_return
+    category: return_to_previous_topic
+    description: 先問宿網申請，切到 Email，再用不同回指說法回到第一題並加入換宿條件。
+    expected_outcome: 回指第一輪宿網，保留 application intent，加入 dorm_transfer，不得變成 troubleshooting。
+    personas:
+      - 會在多個校園服務間跳題，回頭時偏好說「第一題」或「前面那個」的學生。
+      - 口語簡短，會說「先回宿網那題」而不重複完整背景的住宿生。
+    semantic_criteria:
+      - 最後一輪回答換宿後如何辦理宿網申請。
+      - 最後一輪不得提供宿網連線異常排除作為主要答案。
+    tags: [known_bug, reference, dorm_transfer, application]
+    turns:
+      - generation:
+          goal: 詢問宿舍網路的申請方式。
+          examples: [宿網要怎麼申請？, 我要怎麼辦宿舍網路？]
+          must_include_any: [宿網, 宿舍網路]
+          style_notes: [明確是申請，不是連不上]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          standalone_contains_any: [申請, 辦]
+          allowed_retrieval_topics: [dorm_network]
+      - generation:
+          goal: 完整且明確地改問清大學生 Email 或 GAPP 申請。
+          examples: [那學生信箱怎麼申請？, 換個問題，GAPP 帳號要去哪裡辦？]
+          must_include_any: [學生信箱, Email, email, GAPP, gapp]
+          style_notes: [必須是獨立新 topic]
+        expected:
+          topic: email
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          relevant_history_excludes: [1]
+          allowed_retrieval_topics: [email]
+      - generation:
+          goal: 用自然且多樣的回指方式回到第一輪宿網申請，加入已換宿條件。
+          examples: [回到第一個問題，如果我是換宿的呢？, 先回宿網那題，我換宿後要怎麼辦？, 前面宿網申請那個，換宿之後呢？]
+          must_include_any: [第一, 前面, 剛才, 宿網, 宿舍網路]
+          must_include_all: [換宿]
+          style_notes: [仍是申請問題, 不可加入連不上或故障]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: follow_up
+          reference_status: resolved
+          referenced_turn_ids: [1]
+          qualifiers: [dorm_transfer]
+          standalone_contains_any: [申請, 辦]
+          standalone_forbids: [連不上, 故障, 異常]
+          allowed_retrieval_topics: [dorm_network]
+
+  - scenario_id: dorm_intent_application_to_troubleshooting
+    category: intent_switching
+    description: 同一宿網 topic 由申請明確切換為連線故障，不得沿用 application intent。
+    expected_outcome: 第二輪 intent 是 troubleshooting，申請歷史不應污染 query 或答案。
+    personas:
+      - 一開始想辦宿網、接著發現已經辦過但連不上的住宿生。
+      - 用詞直接、每輪只問一件事的學生。
+    semantic_criteria:
+      - 第二輪主要回答宿網連不上，而不是重複申請流程。
+    tags: [known_bug, intent_switch, dorm_network]
+    turns:
+      - generation:
+          goal: 詢問宿網申請方法。
+          examples: [宿網怎麼申請？, 宿舍網路去哪辦？]
+          must_include_any: [宿網, 宿舍網路]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          allowed_retrieval_topics: [dorm_network]
+      - generation:
+          goal: 明確說已申請但宿網連不上，要求故障排除。
+          examples: [我已經申請好了，但宿網連不上怎麼辦？, 宿舍網路辦完還是不能用。]
+          must_include_any: [宿網, 宿舍網路]
+          style_notes: [必須包含連不上、不能用或異常語意]
+        expected:
+          topic: dorm_network
+          intent: troubleshooting
+          reference_status: none
+          referenced_turn_ids: []
+          relevant_history_excludes: [1]
+          standalone_contains_any: [連不上, 不能用, 無法, 故障]
+          allowed_retrieval_topics: [dorm_network]
+
+  - scenario_id: dorm_transfer_qualifier_application
+    category: qualifier_modification
+    description: 宿網申請 follow-up 新增官方 domain 已有的換宿條件。
+    expected_outcome: 保留宿網 application 並把 dorm_transfer 加入 standalone query。
+    personas:
+      - 剛換宿、擔心宿網是否要重新申請的住宿生。
+    semantic_criteria:
+      - 回答必須處理換宿與宿網申請的關係。
+    tags: [qualifier, dorm_transfer]
+    turns:
+      - generation:
+          goal: 詢問宿網申請。
+          examples: [宿網要怎麼申請？]
+          must_include_any: [宿網, 宿舍網路]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          allowed_retrieval_topics: [dorm_network]
+      - generation:
+          goal: 不重複完整問題，只補充自己剛換宿並詢問是否需重新辦理。
+          examples: [如果我剛換宿呢？, 換寢室後需要重新申請嗎？]
+          must_include_any: [換宿, 換寢室]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: follow_up
+          reference_status: resolved
+          referenced_turn_ids: [1]
+          qualifiers: [dorm_transfer]
+          standalone_contains_any: [申請, 辦]
+          allowed_retrieval_topics: [dorm_network]
+
+  - scenario_id: unresolved_reference_without_history
+    category: ambiguous_reference
+    description: 沒有任何 conversation history 時，第一輪就要求回到第一個問題並加入換宿條件。
+    expected_outcome: reference_status 是 unresolved，Agent 要求 clarification，不得猜 topic 或 intent。
+    personas:
+      - 誤以為系統看得到先前不存在對話的住宿生。
+    semantic_criteria:
+      - 應指出找不到被回指的問題並請使用者補充，不得直接猜宿網申請或故障。
+    tags: [known_bug, unresolved_reference]
+    turns:
+      - generation:
+          goal: 第一則訊息直接回指不存在的第一個問題，並提到換宿，但不要明說是哪個服務。
+          examples: [回到第一個問題，如果我是換宿的呢？, 剛才前面那題，換宿後呢？]
+          must_include_any: [第一, 前面, 剛才]
+          must_include_all: [換宿]
+          must_not_include: [宿網, Wi-Fi, VPN, 信箱]
+        expected:
+          topic: unknown
+          intent: unknown
+          relation: new_topic
+          reference_status: unresolved
+          referenced_turn_ids: []
+          must_answer: false
+          must_clarify: true
+
+  - scenario_id: explicit_wifi_override_after_dorm_failure
+    category: explicit_topic_override
+    description: 宿網連不上後，使用者明確說 Wi-Fi 也連不上。
+    expected_outcome: 第二輪必須是 campus_wifi，不得被上一輪 dorm_network 污染。
+    personas:
+      - 同時遇到兩種網路問題、會用「也」快速換題的學生。
+    semantic_criteria:
+      - 第二輪只處理校園 Wi-Fi 或先確認 Wi-Fi SSID，不得直接給宿網網路孔/IP 排障。
+    tags: [known_bug, explicit_override, context_contamination]
+    turns:
+      - generation:
+          goal: 明確詢問宿網連不上。
+          examples: [宿網連不上怎麼辦？]
+          must_include_any: [宿網, 宿舍網路]
+        expected:
+          topic: dorm_network
+          intent: troubleshooting
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          allowed_retrieval_topics: [dorm_network]
+      - generation:
+          goal: 明確切換為校園 Wi-Fi 也連不上，不要省略 Wi-Fi 名稱。
+          examples: [Wi-Fi 也連不上。]
+          must_include_any: [Wi-Fi, wifi, 無線網路]
+        expected:
+          topic: campus_wifi
+          intent: troubleshooting
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          relevant_history_excludes: [1]
+          standalone_forbids: [宿網, 宿舍網路]
+          allowed_retrieval_topics: [campus_wifi]
+
+  - scenario_id: answerable_wifi_ssids
+    category: unnecessary_refusal
+    description: 對知識庫已有官方資料、但不在 fast-answer table 的校園 Wi-Fi SSID 清單產生不同問法。
+    expected_outcome: Agent 應經 RAG/LLM 提供校園 Wi-Fi SSID 資訊，不得拒答或要求無必要 clarification。
+    personas:
+      - 剛到清大、不知道校園裡應連哪個 Wi-Fi 名稱的新生。
+      - 只知道技術詞 SSID、問題很短的學生。
+    semantic_criteria:
+      - 應回答清大提供的校園 Wi-Fi 或 SSID 名稱，並以官方來源為依據。
+    tags: [answerable, refusal, campus_wifi, rag_path]
+    turns:
+      - generation:
+          goal: 用自然說法詢問清大校園無線網路有哪些 SSID 可以連線。
+          examples: [清大校園無線網路有哪些 SSID 可以連？, 學校 Wi-Fi 的 SSID 清單有哪些？]
+          must_include_any: [Wi-Fi, wifi, 無線網路]
+          must_include_all: [SSID]
+        expected:
+          topic: campus_wifi
+          intent: lookup
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          standalone_contains_all: [ssid]
+          allowed_retrieval_topics: [campus_wifi]
+          must_answer: true
+
+  - scenario_id: dorm_application_rephrasing
+    category: rephrasing_fuzz
+    description: 自動改寫宿網申請問法，測試是否過度依賴固定 keyword。
+    expected_outcome: 不論口語寫法仍辨識 dorm_network/application 並回答。
+    personas:
+      - 不使用正式詞彙、會說「辦宿舍的網路」的學生。
+      - 會省略主詞且使用台灣口語的住宿生。
+    semantic_criteria:
+      - 回答宿舍網路申請，不得誤判成校園 Wi-Fi 或故障排除。
+    tags: [fuzz, rephrase, dorm_network]
+    turns:
+      - generation:
+          goal: 改寫「宿網怎麼申請」，保留宿舍網路與辦理語意但避免照抄 examples。
+          examples: [我要怎麼辦宿網？, 住宿舍要去哪裡申請網路？, 宿舍網路去哪辦？]
+          must_include_any: [宿網, 宿舍網路, 住宿舍]
+          style_notes: [必須有申請或辦理語意]
+        expected:
+          topic: dorm_network
+          intent: application
+          relation: new_topic
+          reference_status: none
+          referenced_turn_ids: []
+          standalone_contains_any: [申請, 辦]
+          allowed_retrieval_topics: [dorm_network]

@@ -1,0 +1,48 @@
+{
+  "audited_at": "2026-08-29T01:09:28+08:00",
+  "dependency_health": {
+    "status": "ready",
+    "embedding": {
+      "status": "ok",
+      "provider": "openai",
+      "model": "qwen3-embedding:0.6b",
+      "dimensions": 1024,
+      "observed_latency_ms": 485.7
+    },
+    "qdrant": {
+      "status": "ok",
+      "collection": "nthu_netsys_docs__1787924232138133628",
+      "points_count": 217,
+      "observed_latency_ms": 18.8
+    },
+    "llm": {
+      "status": "ok",
+      "model": "Qwen3.8-27B",
+      "configured_model_found": true,
+      "observed_latency_ms": 27.9
+    }
+  },
+  "qdrant_payload_audit": {
+    "points": 217,
+    "service": {
+      "missing": 143,
+      "campus_wifi": 74
+    },
+    "intent": {
+      "missing": 143,
+      "coverage": 74
+    },
+    "language": {
+      "missing": 217
+    },
+    "source_type": {
+      "missing": 143,
+      "official_coverage": 74
+    }
+  },
+  "notes": [
+    "Health probes bypass the embedding circuit breaker and verified the dependency was available after baseline execution.",
+    "The 74 tagged points are official campus Wi-Fi coverage records; the other 143 crawled chunks have no service or intent metadata.",
+    "The read-only audit used Qdrant scroll with vectors disabled."
+  ]
+}

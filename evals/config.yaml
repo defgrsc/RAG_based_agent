@@ -1,0 +1,84 @@
+version: 1
+
+# DeepEval is configured to stay local: no Confident AI account or cloud upload.
+local_first:
+  telemetry_opt_out: true
+  tracing_enabled: false
+
+agent:
+  adapter: inprocess
+  base_url: http://127.0.0.1:8000
+  timeout_seconds: 180
+  language: zh-Hant
+  clear_cache_between_conversations: true
+
+simulator_model:
+  # openai_compatible reuses OPENAI_BASE_URL / OPENAI_API_KEY / MODEL_NAME.
+  # Change provider to ollama and set OLLAMA_BASE_URL / OLLAMA_MODEL for Ollama.
+  provider: openai_compatible
+  temperature: 0.75
+  max_tokens: 500
+  timeout_seconds: 120
+
+evaluator_model:
+  provider: openai_compatible
+  temperature: 0.0
+  max_tokens: 600
+  timeout_seconds: 120
+
+profiles:
+  SMOKE:
+    categories:
+      - return_to_previous_topic
+      - intent_switching
+      - ambiguous_reference
+      - explicit_topic_override
+      - unnecessary_refusal
+    variants_per_scenario: 1
+    max_conversations: 5
+    max_turns: 3
+    consistency_runs: 1
+    max_concurrent: 1
+    evaluator: hybrid
+
+  STANDARD:
+    categories:
+      - topic_switching
+      - return_to_previous_topic
+      - intent_switching
+      - qualifier_modification
+      - ambiguous_reference
+      - explicit_topic_override
+      - unnecessary_refusal
+      - rephrasing_fuzz
+      - colloquial_unseen
+    variants_per_scenario: 3
+    max_conversations: 42
+    max_turns: 4
+    consistency_runs: 3
+    max_concurrent: 1
+    evaluator: hybrid
+
+  COLLOQUIAL:
+    categories:
+      - colloquial_unseen
+    variants_per_scenario: 1
+    max_conversations: 6
+    max_turns: 3
+    consistency_runs: 3
+    max_concurrent: 1
+    evaluator: deterministic
+
+  STRESS:
+    categories: ["*"]
+    variants_per_scenario: 12
+    max_conversations: 200
+    max_turns: 6
+    consistency_runs: 10
+    max_concurrent: 2
+    evaluator: hybrid
+
+output:
+  directory: evals/runs
+  failures_directory: evals/failures
+  regressions_file: evals/regressions/promptfoo_cases.jsonl

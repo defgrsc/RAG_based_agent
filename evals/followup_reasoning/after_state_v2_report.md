@@ -1,0 +1,30 @@
+# Follow-up Reasoning Evaluation — after_state_v2
+
+Generated: 2026-08-30T23:09:45+08:00
+
+## Outcome
+
+- Conversations: 50
+- User turns: 130
+- Conversation pass rate: 0.9
+- Turn pass rate: 0.9615
+
+## Follow-up metrics
+
+| Metric | Passed / Errors | Total | Rate |
+|---|---:|---:|---:|
+| followup_resolution_pass_rate | 75 | 80 | 0.9375 |
+| action_result_understanding_pass_rate | 32 | 32 | 1.0 |
+| troubleshooting_progression_pass_rate | 67 | 72 | 0.9306 |
+| previous_recommendation_awareness_pass_rate | 80 | 80 | 1.0 |
+| diagnostic_answer_handling_pass_rate | 11 | 12 | 0.9167 |
+| repeated_step_error_rate | 0 | 24 | 0.0 |
+| incorrect_refusal_rate | 0 | 80 | 0.0 |
+| escalation_accuracy | 40 | 40 | 1.0 |
+
+## Failure distribution
+
+| Failure | Count |
+|---|---:|
+| FOLLOWUP_RESOLUTION_ERROR | 5 |
+| DIAGNOSTIC_ANSWER_ERROR | 1 |

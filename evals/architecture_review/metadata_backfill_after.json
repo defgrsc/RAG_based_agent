@@ -1,0 +1,111 @@
+{
+  "captured_at": "2026-08-29T07:27:09+08:00",
+  "scope": "Ingestion metadata contract, staged reindex, and shadow filter validation. Production retrieval hard filtering remains deferred.",
+  "collections": {
+    "before": "nthu_netsys_docs__1787924232138133628",
+    "after": "nthu_netsys_docs__1787959330377891262",
+    "after_status": "green",
+    "points": 217,
+    "rollback_collection_retained": true
+  },
+  "ingestion": {
+    "pages": 70,
+    "chunks": 217,
+    "metadata_schema_version": 2,
+    "embedding_batch_size": 8,
+    "embedding_batches": 28,
+    "embedding_timeout_seconds": 3,
+    "slowest_observed_batch_seconds": 2.066,
+    "crawl_seconds": 221.170,
+    "embedding_seconds": 36.090,
+    "qdrant_seconds": 0.273,
+    "total_seconds": 257.560,
+    "activation": "Documents were annotated and validated before embedding; Qdrant activated the staging collection only after successful create and upsert."
+  },
+  "completeness": {
+    "service": {"present": 217, "missing": 0, "rate": 1.0},
+    "services": {"present": 217, "missing": 0, "rate": 1.0},
+    "task": {"present": 217, "missing": 0, "rate": 1.0},
+    "tasks": {"present": 217, "missing": 0, "rate": 1.0},
+    "intent": {"present": 217, "missing": 0, "rate": 1.0},
+    "language": {"present": 217, "missing": 0, "rate": 1.0},
+    "source_type": {"present": 217, "missing": 0, "rate": 1.0},
+    "document_type": {"present": 217, "missing": 0, "rate": 1.0},
+    "metadata_schema_version": {"present": 217, "missing": 0, "rate": 1.0}
+  },
+  "type_validation": {
+    "services_not_list": 0,
+    "tasks_not_list": 0,
+    "wrong_schema_version": 0,
+    "document_validation_error": null
+  },
+  "distributions": {
+    "services": {
+      "campus_wifi": 97,
+      "dorm_network": 25,
+      "vpn": 35,
+      "email": 57,
+      "general_network": 40
+    },
+    "tasks": {
+      "application": 51,
+      "troubleshooting": 25,
+      "configuration": 36,
+      "coverage": 75,
+      "credentials": 21,
+      "status": 16,
+      "lookup": 23,
+      "general": 35
+    },
+    "languages": {
+      "zh-Hant": 202,
+      "en": 15
+    }
+  },
+  "filtered_retrieval_shadow": {
+    "cases": 8,
+    "passed": 8,
+    "metadata_mismatches": 0,
+    "filters": [
+      {"services": "campus_wifi"},
+      {"services": "dorm_network"},
+      {"services": "vpn"},
+      {"services": "email"},
+      {"services": "campus_wifi", "tasks": "coverage"},
+      {"services": "dorm_network", "tasks": "configuration"},
+      {"services": "vpn", "tasks": "configuration"},
+      {"services": "email", "tasks": "application"}
+    ]
+  },
+  "full_evaluation": {
+    "dataset": "275 conversations / 337 turns",
+    "previous_conversation_pass_rate": 0.4727,
+    "after_conversation_pass_rate": 0.4691,
+    "previous_turn_pass_rate": 0.5430,
+    "after_turn_pass_rate": 0.5401,
+    "fixed_turns": 0,
+    "regressed_turns": 1,
+    "unchanged_pass_turns": 182,
+    "unchanged_fail_turns": 154,
+    "retrieval_isolation_rate": 0.9816,
+    "regression_case": {
+      "test_id": "zh_single_014",
+      "retrieval_filter": null,
+      "topic_and_intent_unchanged": true,
+      "direct_retrieval_documents": 5,
+      "cause": "The generated answer triggered has_prompt_leak(), so main.py replaced it with fallback_for_prompt_leak() and cleared response sources. This is generation/safety-path behavior, not metadata-filter recall loss."
+    }
+  },
+  "tests": {
+    "targeted": "56 passed, 22 subtests passed",
+    "full": "139 passed, 24 subtests passed",
+    "warning": "Existing Starlette/httpx deprecation warning"
+  },
+  "acceptance": {
+    "metadata_completeness_100_percent": true,
+    "collection_green": true,
+    "shadow_filter_zero_wrong_service": true,
+    "old_collection_retained_for_rollback": true,
+    "production_hard_filtering_enabled": false
+  }
+}
